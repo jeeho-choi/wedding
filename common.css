@@ -1,9 +1,8 @@
 /* common.css */
 body {
-    font-family: Arial, sans-serif;
+    font-family: 'Nanum Gothic', sans-serif;
     margin: 0;
     padding: 0;
-    text-align: center;
     background-color: #f8f9fa;
 }
 
@@ -15,8 +14,33 @@ body {
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
+.intro {
+    /* display: flex;
+    justify-content: center;
+    align-items: center; */
+    height: 100vh; /* 100% of the viewport height */
+    width: 100vw;  /* 100% of the viewport width */
+    background-color: #f8f9fa;
+    text-align: center;
+    background: no-repeat cover url("/images/main_bg.png");
+}
+
 h1, h2 {
     color: #333;
+    font-family: 'Bodoni Moda SC', serif; /* Applying Bodoni Moda for headings */
+}
+
+.intro h1 {
+    text-align: left;
+    font-weight: 400;
+}
+
+h1 span {
+    font-size: 20px;
+}
+
+.above {
+    font-family: Above-the-Beyond, cursive; /* Applying Above the Beyond Script for specific headings */
 }
 
 .btn {
