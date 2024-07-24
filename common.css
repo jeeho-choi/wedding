@@ -1,82 +1,178 @@
 /* common.css */
+@font-face {
+    font-family: 'RIDIBatang';
+    src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_twelve@1.0/RIDIBatang.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+html {
+    overflow-x :  hidden;
+ }
+
 body {
     font-family: 'Nanum Gothic', sans-serif;
+    color: #151515;
     margin: 0;
     padding: 0;
     background-color: #fefefe;
+    font-size: 16px;
 }
 
-.container {
+section {
+    /* background-color: #999; */
+    padding: 25px;
+    text-align: center;
+}
+
+h1 {
+    font-size: 2em;
+    font-weight: 600;
+}
+
+.bodoni {
+    font-family: "Bodoni Moda SC", serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+    letter-spacing: -1px;
+    -webkit-text-size-adjust : none;  /* 크롬, 사파리, 오페라(신) */
+    -ms-text-size-adjust : none;  /* IE */
+    -moz-text-size-adjust : none;  /* 파이어폭스 */
+    -o-text-size-adjust : none;  /* 오페라(구)*/
+}
+
+.above {
+    font-family: 'Above-the-Beyond', cursive;
+    font-weight: 400;
+}
+
+.allura {
+    font-family: 'Allura', cursive;
+    font-weight: 400;
+}
+
+/* .container {
     max-width: 600px;
     margin: 50px auto;
     padding: 20px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-}
+} */
 
-.intro {
-    /* display: flex;
-    justify-content: center;
-    align-items: center; */
+section.intro {
     position: relative;
     height: 100vh; /* 100% of the viewport height */
     width: 100vw;  /* 100% of the viewport width */
-    text-align: center;
-    /* background: no-repeat cover url("https://github.com/user-attachments/assets/62d4ed80-c4a6-4543-ad1f-3bf80dc6be6f"); */
+    overflow: hidden; /* for adding line :before  */
     background-image: url("https://github.com/user-attachments/assets/62d4ed80-c4a6-4543-ad1f-3bf80dc6be6f");
+    background-repeat: no-repeat;
     background-size: cover;
     background-attachment: fixed;
     background-color: rgba(255, 255, 255, 0.3);
+    padding: 0;
+    font-weight: 500;
 }
 
-h1, h2, .intro p {
-    color: #151515;
-    font-family: 'Bodoni Moda SC', serif; /* Applying Bodoni Moda for headings */
-}
-
-.above {
-    font-family: Above-the-Beyond, cursive; /* Applying Above the Beyond Script for specific headings */
-}
-
-.intro .line{
-    position: absolute;
-    height: 90vh;
-    width: 50vw;
-    margin: 5vh;
-    border: solid 2px #151515;
-    border-top: none;
-    border-right: none;
-}
-
-.intro h1 {
+.title {
     text-align: left;
-    font-size: 62px;
-    font-weight: 400;
+    font-size: 3.4em;
     line-height: 90%;
     margin: 0 auto;
-    padding: 30% 20px;
-
 }
-
-.intro h1 span {
-    font-size: 0.6em;
+.title p {
+    position: absolute;
+    top: 16vh;
+    left: 6vw;
+    width: 90vw;
+}
+.title span {
+    font-size: 0.7em;
     line-height: 200%;
 }
-
-
-.intro p {
+/* adding vertical lines */
+.title {
+    display: inline-block;
+    zoom: 1;
+    vertical-align: top;
+    position: relative;
+    /* padding: 150px 35px 0; */
+    height: 100%;
+    width: 100%;
+}
+.title:before,
+.title:after {
+    content: '';
+    display: block;
     position: absolute;
-    bottom: 3vh;
-    right: 9vw;
-    font-size: 30px;
+    border-left: 1px solid #151515;
+    left: 10vw;
+}
+.title:before {
+    top: 0;
+    height: 21vh;
+}
+.title:after { 
+    bottom: 6vh;
+    height: 46vh;
+}
+
+.intro .date {
+    position: absolute;
+    bottom: 4vh;
+    left: 0;
+    font-size: 2em;
     margin: 0;
+    width: 90vw;
+    text-align: right;
+    line-height: 170%;
+}
+/* adding horizontal line */
+.intro .date:before {
+    content: '';
+    display: block;
+    position: absolute;
+    border-bottom: 1px solid #151515;
+    bottom: 2vh;
+    left: 10vw;
+    width: 52vw;
+}
+
+/* sec2 info */
+.info {
+    text-align: center;
+    background-color: #2e2e2e;
+    color: #eee;
+}
+.info .textbox {
+    letter-spacing: 1px;
+    padding: 25px 20px;
+    box-shadow: 0 0 10px rgba(214, 158, 228, 0.5);
+}
+.info h1{margin: 5px 0;}
+.info p {
+    font-size: 1.2em;
+    margin: 0;
+}
+.info p.place {
+    margin-top: 30px;
+}
+
+.greeting {
+    font-family: 'RIDIBatang';
+    background-color: #efefef;
+    /* text-align: left; */
+    font-size: 1.15em;
+    padding: 40px 0;
+}
+.greeting h1{font-size: 1.6em;margin-bottom: 60px;}
+.greeting .textbox{
+    padding-bottom: 25px;
+    line-height: 1.6;
 }
 
 
 
-
-
-
-.btn {
+/* .btn {
     display: inline-block;
     padding: 10px 20px;
     margin-top: 20px;
@@ -88,10 +184,10 @@ h1, h2, .intro p {
 
 .btn:hover {
     background-color: #0056b3;
-}
+} */
 
 /* RSVP Modal */
-.rsvp-modal {
+/* .rsvp-modal {
     display: none;
     position: fixed;
     z-index: 1;
@@ -143,4 +239,4 @@ button {
 
 button:hover {
     background-color: #0056b3;
-}
+} */
